@@ -1,10 +1,12 @@
+import { scroll, scrollTop } from "./ui/Utilities.js";
+
 const ELEMENTS = { // Here is the constant elements for the site
     nav: document.body.querySelector("nav"),
     navLinks: Array.from(document.body.querySelectorAll("header > nav > a")),
     sections: new Map(Array.from(document.body.querySelectorAll("section")).map(section => ["#" + section.id, section])),
 };
 
-for (let link of ELEMENTS.navLinks) {
+for (let link of ELEMENTS.navLinks) { // Going to the top of each section using the hyperlinks in the menu
     link.addEventListener("click", event => {
         let section = ELEMENTS.sections.get(event.target.hash);
         if (!section)

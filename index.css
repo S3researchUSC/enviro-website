@@ -7,7 +7,6 @@ body {
     tab-size: 2;
 
     --main-color: #57BC90;
-    background-color: white;
 }
 
 figcaption {
@@ -210,4 +209,10 @@ form > button {
     margin-left: var(--margin);
 
     --margin: 8px;
+}
+
+@media screen and (min-width: 600px) {
+    .flex.horizontal > *:not(:only-child) {
+        width: calc(50% - (2 * var(--margin)));
+    }
 }
