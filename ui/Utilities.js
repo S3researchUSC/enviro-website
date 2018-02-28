@@ -24,8 +24,17 @@ export function easeInOutQuad(progress, start, delta, duration) {
 export function loop(func) {
     window.requestAnimationFrame(function frame(timestamp) {
             if (func(timestamp))
-                    window.requestAnimationFrame(frame);
+                window.requestAnimationFrame(frame);
     });
+}
+
+export function pick(array) {
+        return array[Math.floor(Math.random() * array.length)];
+}
+
+export function removeChildren(element) {
+        while (element.firstChild)
+                element.firstChild.remove();
 }
 
 export function scroll(target, duration) {
@@ -46,4 +55,8 @@ export function scrollTop(element) {
             element = element.offsetParent;
     }
     return y;
+}
+
+export function sum(object, initialValue = 0) {
+        return Object.values(object).reduce((accumulator, item) => accumulator + item, initialValue);
 }
