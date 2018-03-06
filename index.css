@@ -216,3 +216,11 @@ form > button {
         width: calc(50% - (2 * var(--margin)));
     }
 }
+
+.heat > p {
+    margin: 0.5em 0 0;
+}
+
+#Comparison .heat ol {
+    min-height: 6em;
+}
