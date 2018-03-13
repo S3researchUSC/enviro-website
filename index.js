@@ -68,7 +68,7 @@ d3.queue()
             heat.element.style.setProperty("height", heat.element.offsetWidth + "px");
         }
 
-        let area = pick(Array.from(areas));
+        let state = pick(Array.from(states));
         createHeat(ELEMENTS.heats[0], {
             state,
             year: "2014",
