@@ -39,7 +39,7 @@ export function removeChildren(element) {
 
 export function scroll(target, duration) {
     let start = scrollTop();
-    animate(ProgressEvent => {
+    animate(progress => {
             let y = easeInOutQuad(progress, start, target - start, duration);
             window.scroll(0, Math.round(y));
     }, duration);

@@ -29,7 +29,7 @@ export default class Heat {
         this._stateSelectElement = stateSelectContainer.appendChild(document.createElement("select"));
         this._stateSelectElement.addEventListener("change", this._handleStateChange.bind(this));
         
-        for (let key in data) {
+        for (let key in data[this._yearSelectElement.value]) {
             let optionElement = this._stateSelectElement.appendChild(document.createElement("option"));
             optionElement.selected = key === options.defaultState;
             optionElement.value = key;

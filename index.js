@@ -1,4 +1,4 @@
-import { scroll, scrollTop } from "./ui/Utilities.js";
+import { pick, removeChildren, sum, scroll, scrollTop } from "./ui/Utilities.js";
 import Heat from "./ui/Heat.js";
 
 const ELEMENTS = { // Here is the constant elements for the site
@@ -41,7 +41,7 @@ d3.queue()
                     accumulator[state] = {};
 
                 let key = item["Latitude"] + item["Longitude"];
-                if (!(key in accumulator)) {
+                if (!(key in accumulator[state])) {
                     let x = parseFloat(item["Latitude"]);
                     let y = parseFloat(item["Longitude"]);
                     accumulator[state][key] = {
