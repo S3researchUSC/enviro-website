@@ -1,3 +1,9 @@
+export const COOLING = [
+    "CC",
+    "CS",
+    "ST",
+];
+
 export const FUEL = [
     "CL",
     "CL/DFO",
@@ -18,12 +24,6 @@ export const FUEL = [
     "NUC",
     "OT",
     "SUN",
-];
-
-export const COOLING = [
-    "CC",
-    "CS",
-    "ST",
 ];
 
 export const STATE = [

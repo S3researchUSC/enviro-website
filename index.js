@@ -29,7 +29,7 @@ window.addEventListener("scroll", handleScroll);
 handleScroll();
 
 d3.queue()
-    .defer(d3.csv, "data/2014-thermalPP-data.csv")
+    .defer(d3.csv, "data/heatmap_2014.csv")
     .await((error, csv2014) => {
         let formattedHeat = {};
         let states = new Set;
@@ -68,9 +68,8 @@ d3.queue()
             heat.element.style.setProperty("height", heat.element.offsetWidth + "px");
         }
 
-        let state = pick(Array.from(states));
         createHeat(ELEMENTS.heats[0], {
-            state,
+            state: "CA", // Hard code in a state for now
             year: "2014",
         });
     });

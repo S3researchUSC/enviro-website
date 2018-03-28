@@ -35,7 +35,7 @@ export default class Heat {
             optionElement.value = key;
             optionElement.textContent = STATE[parseInt(key) + 1];
         }
-
+        
         let map = new google.maps.Map(options.container.appendChild(document.createElement("div")), {
             zoom: this._defaultZoom,
             center: this._generatePosition(),
@@ -43,13 +43,13 @@ export default class Heat {
         google.maps.event.addListener(map, "bounds_changed", this._handleBoundsChanged.bind(this));
 
         this._chart = new HeatmapOverlay(map, {
-            radius: 10,
+            radius: 5,
             minOpacity: 0.25,
             maxOpacity: 1,
             latField: "x",
             lngField: "y",
             valueField: "data",
-        });
+        }); 
 
         options.container.appendChild(document.createElement("p")).textContent = "Top Fuel Types";
 
@@ -98,7 +98,7 @@ export default class Heat {
         }, {});
         for (let [key, value] of Object.entries(values).sort((a,b) => b[1] - a[1]).slice(0, 5)) {
             let listItemElement = this._detailsElement.appendChild(document.createElement("li"));
-            listItemElement.textContent = `${FUEL[parseInt(key) - 1]} (${value})`;
+            listItemElement.textContent = `${FUEL[parseInt(key) + 1]} (${value})`;
         }
     }
 
