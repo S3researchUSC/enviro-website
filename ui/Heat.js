@@ -43,7 +43,7 @@ export default class Heat {
         google.maps.event.addListener(map, "bounds_changed", this._handleBoundsChanged.bind(this));
 
         this._chart = new HeatmapOverlay(map, {
-            radius: 5,
+            radius: 12,
             minOpacity: 0.25,
             maxOpacity: 1,
             latField: "x",
@@ -51,7 +51,7 @@ export default class Heat {
             valueField: "data",
         }); 
 
-        options.container.appendChild(document.createElement("p")).textContent = "Top Fuel Types";
+        options.container.appendChild(document.createElement("p")).textContent = "Top Fuel Types (for this state)";
 
         this._detailsElement = options.container.appendChild(document.createElement("ol"));
 

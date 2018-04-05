@@ -13,6 +13,14 @@ export function animate(func, duration) {
     });
 }
 
+export function createSVG(tag) {
+        return document.createElementNS("http://www.w3.org/2000/svg", tag);
+}
+
+export function diagonal(a, b) {
+        return `M ${a.y} ${a.x} C ${(a.y + b.y) / 2} ${a.x}, ${(a.y + b.y) / 2} ${b.x}, ${b.y} ${b.x}`;
+}
+
 export function easeInOutQuad(progress, start, delta, duration) {
     progress /= duration / 2;
     if (progress < 1)

@@ -1,10 +1,15 @@
-import { pick, removeChildren, sum, scroll, scrollTop } from "./ui/Utilities.js";
+import { FUEL, STATE } from "./Constants.js";
 import Heat from "./ui/Heat.js";
+import Tree from "./ui/Tree.js";
+import { pick, removeChildren, sum, scroll, scrollTop } from "./ui/Utilities.js";
 
-const ELEMENTS = { // Here is the constant elements for the site
+
+const ELEMENTS = { // Here are the constant elements for the site
     nav: document.body.querySelector("nav"),
     navLinks: Array.from(document.body.querySelectorAll("header > nav > a")),
     sections: new Map(Array.from(document.body.querySelectorAll("section")).map(section => ["#" + section.id, section])),
+
+    tree: document.body.querySelector("#Types .tree"),
 
     heats: Array.from(document.body.querySelectorAll("#Comparison .heat")),
 };
@@ -61,15 +66,30 @@ d3.queue()
         function createHeat(container, {state, year}) {
             let heat = new Heat(formattedHeat, {
                 container,
-                zoom: 12,
+                zoom: 7,
                 defaultState: state,
                 defaultYear: year,
             });
             heat.element.style.setProperty("height", heat.element.offsetWidth + "px");
         }
 
+        let state = pick(Array.from(states));
         createHeat(ELEMENTS.heats[0], {
-            state: "CA", // Hard code in a state for now
+            state,
             year: "2014",
         });
     });
+
+d3.json("data/types.json", json => {
+        new Tree(json, {
+                container: ELEMENTS.tree,
+                width: 800,
+                height: 1165,
+                margin: {
+                        top: 15,
+                        right: 90,
+                        bottom: 15,
+                        left: 135,
+                },
+        })
+});
