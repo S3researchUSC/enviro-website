@@ -221,6 +221,25 @@ form > button {
     margin: 0.5em 0 0;
 }
 
+.tree > .chart .link {
+    fill: none;
+    stroke: lightgrey;
+    stroke-width: 2px;
+}
+
+.tree > .chart .node :matches(circle, circle + text) {
+    cursor: pointer;
+}
+
+.tree > .chart .node circle {
+    stroke:darkcyan;
+    stroke-width: 2px;
+}
+
+.tree > .chart .node text {
+    cursor: default;
+}
+
 #Comparison .heat ol {
     min-height: 6em;
 }

@@ -50,7 +50,7 @@ export default class Tree {
 
                 d3.select(this).append("circle")
                         .attr("r", 1e-6)
-                        .style("fill", d => d.__savedChildren ? "darkred" : "white")
+                        .style("fill", d => d.__savedChildren ? "darkcyan" : "white")
         });
         nodeGroupsEnter.append("text")
 			.attr("dy", "0.35em")
