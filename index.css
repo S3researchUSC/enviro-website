@@ -228,7 +228,7 @@ form > button {
 }
 
 .tree > .chart .node :matches(circle, circle + text) {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .tree > .chart .node circle {

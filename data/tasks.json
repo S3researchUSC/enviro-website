@@ -2,7 +2,98 @@
     "name": "FUEL TYPES",
     "children": [
         {
-            
+            "name": "CL",
+            "parent": "FUEL TYPES",
+            "children": [
+                {
+                    "name": "Coal",
+                    "parent": "CL"
+                },
+                {
+                    "name": "Coal/Diesel Fuel Oil",
+                    "parent": "CL"
+                },
+                {
+                    "name": "Coal/Natural Gas",
+                    "parent": "CL"
+                }
+            ]
+        },
+        {
+            "name": "DFO",
+            "parent": "FUEL TYPES",
+            "children": [
+                {
+                    "name": "Diesel Fuel Oil",
+                    "parent": "DFO"
+                },
+                {
+                    "name": "Diesel Fuel Oil/Natural Gas",
+                    "parent": "DFO"
+                },
+                {
+                    "name": "Diesel Fuel Oil/Residual Fuel Oil",
+                    "parent": "DFO"
+                },
+                {
+                    "name": "Diesel Fuel Oil/WO",
+                    "parent": "DFO"
+                }
+            ]
+        },
+        {
+            "name": "Geothermal",
+            "parent": "FUEL TYPES"
+        },
+        {
+            "name": "JF/Diesel Fuel Oil",
+            "parent": "FUEL TYPES"
+        },
+        {
+            "name": "Landfill Gas",
+            "parent": "FUEL TYPES"
+        },
+        {
+            "name": "NG",
+            "parent": "FUEL TYPES",
+            "children": [
+                {
+                    "name": "Natural Gas",
+                    "parent": "NG"
+                },
+                {
+                    "name": "Natural Gas/Diesel Fuel Oil",
+                    "parent": "NG"
+                },
+                {
+                    "name": "Natural Gas/OBG",
+                    "parent": "NG"
+                },
+                {
+                    "name": "Natural Gas/OG",
+                    "parent": "NG"
+                },
+                {
+                    "name": "Natural Gas/OG/WO",
+                    "parent": "NG"
+                },
+                {
+                    "name": "Natural Gas/Other",
+                    "parent": "NG"
+                }
+            ]
+        },
+        {
+            "name": "Nuclear",
+            "parent": "FUEL TYPES"
+        },
+        {
+            "name": "OT",
+            "parent": "FUEL TYPES"
+        },
+        {
+            "name": "SUN",
+            "parent": "FUEL TYPES"
         }
     ]
 }
