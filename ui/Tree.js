@@ -2,7 +2,7 @@ import { diagonal } from "./Utilities.js";
 
 export default class Tree {
         constructor(data, options = {}) {
-                this._boundCollapse = this._boundCollapse.bind(this);
+                this._boundCollapse = this._collapse.bind(this);
                 this._boundHandleClick = this._handleClick.bind(this);
 
                 this._chart = d3.select(options.container)
@@ -15,7 +15,7 @@ export default class Tree {
                 let width = options.width - options.margin.right - options.margin.left;
                 let height = options.height - options.margin.top - options.margin.bottom;
 
-                this._hierarchy = d3._hierarchy(Data, d => d.children);
+                this._hierarchy = d3.hierarchy(data, d => d.children);
                 this._hierarchy.x0 = height / 2;
                 this._hierarchy.y0 = 0;
                 this._tree = d3.tree().size([height, width]);
