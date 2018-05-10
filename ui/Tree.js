@@ -15,7 +15,7 @@ export default class Tree {
                 let width = options.width - options.margin.right - options.margin.left;
                 let height = options.height - options.margin.top - options.margin.bottom;
 
-                this._hierarchy = d3.hierarchy(data, d => d.children);
+		this._hierarchy = d3.hierarchy(data, d => d.children);
                 this._hierarchy.x0 = height / 2;
                 this._hierarchy.y0 = 0;
                 this._tree = d3.tree().size([height, width]);
