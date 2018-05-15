@@ -63,14 +63,13 @@
 				</div>
             </section>
         </article>
-        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
         <script src="//d3js.org/topojson.v1.min.js"></script>
         <script>
             var width = 960,
                 height = 500;
 
-            var path = d3.geo.path()
-                .projection(null);
+            var path = d3.geo.path().projection(null);
 
             var zoom = d3.behavior.zoom()
                 .translate([0, 0])
@@ -119,6 +118,7 @@
                 d3.select(self.frameElement).style("height", height + "px");
             }
         </script>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
         <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOOO14atqcvUZUURkaNP-w7PbevEmrAsI"></script>
 		<script src="external/heatmap.min.js"></script>
