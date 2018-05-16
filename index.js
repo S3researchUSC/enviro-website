@@ -80,7 +80,7 @@ d3.queue()
         });
     });
 
-d3.json("data/types.json", json => {
+d3.json("data/tasks.json", json => {
         new Tree(json, {
                 container: ELEMENTS.tree,
                 width: 800,
