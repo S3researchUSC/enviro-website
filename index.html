@@ -20,7 +20,7 @@
                     <a href="#Placeholder2">Placeholder 2</a>
                     <a href="#Placeholder3">Placeholder 3</a>
                     <a href="#Comparison">Comparison</a>
-                    <a href="#Placeholder5">Placeholder 5</a>
+                    <a href="#Map">Map</a>
                 </nav>
             </header>
             <section id="Intro"> 
@@ -62,62 +62,10 @@
 					<figure class="heat"></figure>
 				</div>
             </section>
-        </article> <!--
-        <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
-        <script src="//d3js.org/topojson.v1.min.js"></script>
-        <script>
-            var width = 960,
-                height = 500;
-
-            var path = d3.geo.path().projection(null);
-
-            var zoom = d3.behavior.zoom()
-                .translate([0, 0])
-                .scale(1)
-                .scaleExtent([1, 8])
-                .on("zoom", zoomed);
-
-            var svg = d3.select("body").append("svg")
-                .attr("width", width)
-                .attr("height", height);
-
-            var features = svg.append("g");
-
-            svg.append("rect")
-                .attr("class", "overlay")
-                .attr("width", width)
-                .attr("height", height)
-                .call(zoom);
-
-            d3.json("us.json", function(error, us) {
-                if (error) throw error;
-
-                features.append("path")
-                    .datum(topojson.feature(us, us.objects.states))
-                    .attr("class", "state")
-                    .attr("d", path);
-
-                features.append("path")
-                    .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
-                    .attr("class", "state-border")
-                    .attr("d", path)
-                    .style("stroke-width", "1.5px");
-
-                features.append("path")
-                    .datum(topojson.mesh(us, us.objects.counties, function (a, b) { return a !== b; }))
-                    .attr("class", "county-border")
-                    .attr("d", path)
-                    .style("stroke-width", ".5px");
-            });
-
-            function zoomed() {
-                features.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
-                features.select(".state-border").style("stroke-width", 1.5 / d3.event.scale + "px");
-                features.select(".county-border").style("stroke-width", .5 / d3.event.scale + "px");
-
-                d3.select(self.frameElement).style("height", height + "px");
-            }
-        </script> -->
+            <section id = "Map">
+                <script src="ui/ZoomableMap.js"></script>
+            </section>
+        </article>
         <script src="https://d3js.org/d3.v4.min.js"></script>
         <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNuoAGXG2tEBHWykFXhC0cU2nQ0Nf6ZEE"></script>
