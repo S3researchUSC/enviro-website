@@ -51,6 +51,10 @@
                             <figcaption class="text start">Power Plant Fuel</figcaption>
                         </figure>
                     </div>
+                    <div>
+                        <p>Crimes reported to the LAPD are recorded in their database, which is made publicly available for reported crimes from 2010 until present.  They have 136 unique crime codes to describe different types of crime.  These crimes are described by 43 categories that fall into 9 groups.</p>
+						<p>Use the tree to explore the types of crimes and their groupings by clicking on the tree to expand and contract branches.</p>
+                    </div>
                 </div>
             </section>
             <section id="Comparison"> <!-- Placeholder text to test heatmap -->
@@ -63,14 +67,17 @@
 				</div>
             </section>
             <section id = "Map">
-                <script src="ui/ZoomableMap.js"></script>
+                <div class = "zoomable">
+                    <iframe sandbox="allow-popups allow-scripts allow-forms allow-same-origin" src = "/ui/ZoomableMap.html" marginwidth="0" marginheight="0" style = "height:500px;" scrolling="no"></iframe>
+                </div>
             </section>
-        </article>
+        </article> 
         <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="https://d3js.org/topojson.v1.min.js"></script>
         <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNuoAGXG2tEBHWykFXhC0cU2nQ0Nf6ZEE"></script>
-		<script src="external/heatmap.min.js"></script>
-		<script src="external/gmaps-heatmaps.js"></script>
-        <script src="index.js" type="module"></script>
+	    <script src="external/heatmap.min.js"></script>
+	    <script src="external/gmaps-heatmaps.js"></script>
+        <script src="index.js" type="module"></script>  
     </body>
 </html>
