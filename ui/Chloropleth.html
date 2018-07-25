@@ -19,7 +19,7 @@
         width = +svg.attr("width"),
         height = +svg.attr("height");
 
-        var water = d3.map();
+        var power = d3.map();
 
         var path = d3.geoPath();
 
@@ -27,9 +27,9 @@
             .domain([1,10])
             .rangeRound([600, 860]);
 
-        var color = d3.scaleThreshold()
-            .domain(d3.range(2, 10))
-            .range(d3.schemeBlues[9]);
+        var color = d3.scaleLog()
+            .domain(d3.range(1000, 1000000))
+            .range(d3.schemeGreens[5]);
 
         var g = svg.append("g")
             .attr("class", "key")
@@ -66,7 +66,7 @@
 
         d3.queue()
             .defer(d3.json, "https://d3js.org/us-10m.v1.json")
-            .defer(d3.tsv, "water.tsv", function(d) { water.set(d.id, +d.rate); })
+            .defer(d3.tsv, "county-gen-2010.csv", function(d) { power.set(d.County, +d.Renewable); })
             .await(ready);
 
         function ready(error, us) {
@@ -77,7 +77,7 @@
                 .selectAll("path")
                 .data(topojson.feature(us, us.objects.counties).features)
                 .enter().append("path")
-                    .attr("fill", function(d) { return color(d.rate = water.get(d.id)); })
+                    .attr("fill", function(d) { return color(d.Renewable = power.get(d.County)); })
                     .attr("d", path)
                 .append("title")
                     .text(function(d) { return d.rate + "%"; });
