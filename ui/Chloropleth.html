@@ -27,9 +27,9 @@
             .domain([1,10])
             .rangeRound([600, 860]);
 
-        var color = d3.scaleLog()
-            .domain(d3.range(1000, 1000000))
-            .range(d3.schemeGreens[5]);
+        var color = d3.scaleThreshold()
+            .domain(d3.range(2, 10))
+            .range(d3.schemeGreens[9]);
 
         var g = svg.append("g")
             .attr("class", "key")
@@ -45,7 +45,7 @@
             .enter().append("rect")
                 .attr("height", 8)
                 .attr("x", function(d) { return x(d[0]); })
-                .attr("width", function(d) { return x(d[1]) = x(d[0]); })
+                .attr("width", function(d) { return x(d[1]) - x(d[0]); })
                 .attr("fill", function(d) { return color(d[0]); })
 
         g.append("text")
@@ -66,7 +66,7 @@
 
         d3.queue()
             .defer(d3.json, "https://d3js.org/us-10m.v1.json")
-            .defer(d3.tsv, "county-gen-2010.csv", function(d) { power.set(d.County, +d.Renewable); })
+            .defer(d3.tsv, "../data/county-gen-2010.csv", function(d) { power.set(d.County, +d.Renewable); })
             .await(ready);
 
         function ready(error, us) {
