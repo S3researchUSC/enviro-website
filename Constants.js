@@ -26,6 +26,15 @@ export const FUEL = [
     "SUN",
 ];
 
+export const POWER_TYPES = [
+    "Renewable",
+    "Hydro",
+    "Nuclear",
+    "Natural.Gas",
+    "Coal",
+    "Other",
+];
+
 export const STATE = [
     undefined, // IDs start at 1
     "AK",
