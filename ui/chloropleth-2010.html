@@ -29,7 +29,7 @@
 
         var color = d3.scaleThreshold()
             .domain(d3.range(2, 10))
-            .range(d3.schemeOranges[9]);
+            .range(d3.schemeBlues[9]);
 
         var g = svg.append("g")
             .attr("class", "key")
@@ -66,7 +66,7 @@
 
         d3.queue()
             .defer(d3.json, "https://d3js.org/us-10m.v1.json")
-            .defer(d3.tsv, "county-gen-2010-reusable.tsv", function(d) { power.set(d.id, +d.data); })
+            .defer(d3.tsv, "county-gen-2010-processed.tsv", function(d) { power.set(d.id, +d.coal); })
             .await(ready);
 
         function ready(error, us) {
@@ -77,10 +77,10 @@
                 .selectAll("path")
                 .data(topojson.feature(us, us.objects.counties).features)
                 .enter().append("path")
-                    .attr("fill", function(d) { return color(d.data = power.get(d.id)); })
+                    .attr("fill", function(d) { return color(d.coal = power.get(d.id)); })
                     .attr("d", path)
                 .append("title")
-                    .text(function(d) { return d.data; });
+                    .text(function(d) { return d.coal; });
             
             svg.append("path")
                 .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))

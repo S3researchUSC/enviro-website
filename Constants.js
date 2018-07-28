@@ -27,12 +27,12 @@ export const FUEL = [
 ];
 
 export const POWER_TYPES = [
-    "Renewable",
-    "Hydro",
-    "Nuclear",
-    "Natural.Gas",
-    "Coal",
-    "Other",
+    "renewable",
+    "hydro",
+    "nuclear",
+    "naturalgas",
+    "coal",
+    "other",
 ];
 
 export const STATE = [
