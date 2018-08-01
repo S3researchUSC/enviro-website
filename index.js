@@ -1,4 +1,3 @@
-import { FUEL, STATE } from "./Constants.js";
 import Heat from "./ui/Heat.js";
 import Tree from "./ui/Tree.js";
 import { pick, removeChildren, sum, scroll, scrollTop } from "./ui/Utilities.js";
